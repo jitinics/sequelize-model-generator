@@ -1,11 +1,11 @@
 # sequelize-model-generator
 
-##Installation :
+## Installation :
 ```
   npm install -g sqlize
 ```
 
-##start with :
+## start with :
 ```
   sqlize model init -f ./config
 ```
