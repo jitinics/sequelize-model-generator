@@ -1,13 +1,13 @@
 module.exports = {
   dbConfig: {
-    host: '',
-    username: '',
+    host: '192.168.1.254',
+    username: 'root',
     password: '',
     schema: ''
   },
   dbTables: [
-    ''
+    'test'
 
   ],
-  outputPath: ''
+  outputPath: './'
 }

@@ -1,11 +1,12 @@
-'use strict'
+#!/usr/bin/env node
 
-let Connection = require('./src/DBCConector')
+const program = require('commander')
+const Connection = require('./src/DBCConector')
 const tranformer = require('./src/createStructure')
 const fileWriter = require('./src/fileWriter')
-const { outputPath, dbConfig, dbTables } = require(process.argv[2])
 
-async function main () {
+async function main (configPath) {
+  const { outputPath, dbConfig, dbTables } = require(configPath)
   let connection = new Connection(dbConfig.host, dbConfig.username, dbConfig.password, dbConfig.schema)
   await connection.dbConnect()
 
@@ -29,4 +30,19 @@ async function main () {
   await connection.dbDisConnect()
 }
 
-main()
+program
+  .version('0.0.1')
+  .description('CLI for deployment with Codeship pro. by Sellsuki Team')
+
+program
+  .command('model')
+  .arguments('[args]')
+  .option('-f, --file <file>', 'config file path')
+  .description('Create sequelize model')
+  .action((args, cmd) => {
+    if (args === 'init') {
+      main(cmd.file)
+    }
+  })
+
+program.parse(process.argv)
