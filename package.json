@@ -1,0 +1,17 @@
+{
+  "name": "db-model-gen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "camelcase": "^5.0.0",
+    "js-beautify": "^1.7.5",
+    "mysql": "^2.16.0",
+    "replace-in-file": "^3.4.0"
+  }
+}
