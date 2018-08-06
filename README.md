@@ -2,7 +2,7 @@
 
 ## Installation :
 ```
-  npm install -g sqlize
+  npm i sqlize-manager
 ```
 
 ## start with :
